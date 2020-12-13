@@ -1,0 +1,59 @@
+package com.company;
+
+import java.net.StandardSocketOptions;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner S = new Scanner(System.in);
+        System.out.println(mat(3,7));
+      System.out.println(palin(2552));
+
+      S.close();
+    }
+    //targil 1
+    public static  int mat(int a , int b ){
+        if(a == 1){
+            return 1;
+        }
+        if(b == 0){
+            if(a == 0){
+                return -1;
+            }
+            return 1;
+        }
+        return mat(a,b - 1)* a;
+    }
+    //targil2
+    public static boolean palin(int num){
+
+        int x,sum=0,num1;
+
+        num1=num;
+        while(num > 0){
+            x = num % 10;
+            System.out.println(x);
+            sum = (sum * 10) + x;
+            System.out.println(sum);
+            palin(num = num / 10);
+
+        }
+        if(num1 == sum )
+            return true;
+        else
+            return false;
+    }
+            
+   public static  void dect(int dec){
+        if(dec < 2) System.out.println(dec);
+        else{
+            dect(dec / 2);
+            System.out.println(dec % 2);
+        }
+   }        
+
+  
+        
+    }
+
